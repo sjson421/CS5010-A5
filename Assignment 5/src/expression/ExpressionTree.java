@@ -42,7 +42,7 @@ public class ExpressionTree implements Expression {
 
   @Override
   public String infix() {
-    return null;
+    return root.infix();
   }
 
   @Override

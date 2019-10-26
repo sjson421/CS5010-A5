@@ -28,4 +28,9 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
     result.add(this.data);
     return result;
   }
+
+  @Override
+  public String infix() {
+    return data.toString();
+  }
 }

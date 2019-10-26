@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="206ea131-aacd-4f5a-9756-66888f55ef53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/expression/ExpressionTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/ExpressionTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/expression/GroupNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/GroupNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/expression/LeafNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/LeafNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/expression/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/TreeNode.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +76,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
