@@ -22,17 +22,6 @@ public class GroupNode<T> extends AbstractTreeNode<T> {
     return this;
   }
 
-  //Taken from lecture 9 notes
-  @Override
-  public List<T> toList() {
-    List<T> result = new ArrayList<T>();
-    result.add(this.data);
-    for (TreeNode<T> child : children) {
-      result.addAll(child.toList());
-    }
-    return result;
-  }
-
   @Override
   public String infix() {
     return "( " + children.get(0).infix() + " " + data.toString() + " "
@@ -45,4 +34,31 @@ public class GroupNode<T> extends AbstractTreeNode<T> {
             + children.get(1).scheme() + ")";
   }
 
+  @Override
+  public double evaluate() {
+    if (children.size() == 2) {
+      if (data.equals("+")) {
+        return children.get(0).evaluate() + children.get(1).evaluate();
+      } else if (data.equals("-")) {
+        return children.get(0).evaluate() - children.get(1).evaluate();
+      } else if (data.equals("*")) {
+        return children.get(0).evaluate() * children.get(1).evaluate();
+      } else {
+        // Due to the check from the tree, this must be division "/"
+        return children.get(0).evaluate() / children.get(1).evaluate();
+      }
+    } else {
+      return 0;
+    }
+  }
+
+  @Override
+  public String toString() {
+    if (children.size() == 2) {
+      return data.toString() + "\n/\n/\n/___" + children.get(0).toString()
+              + "\n/\n/___" + children.get(1).toString();
+    } else {
+      return "Invalid tree";
+    }
+  }
 }

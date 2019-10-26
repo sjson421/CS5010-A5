@@ -21,14 +21,6 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
     return newNode;
   }
 
-  //Taken from lecture 9 notes
-  @Override
-  public List<T> toList() {
-    List<T> result = new ArrayList<T>();
-    result.add(this.data);
-    return result;
-  }
-
   @Override
   public String infix() {
     return data.toString();
@@ -36,6 +28,16 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
 
   @Override
   public String scheme() {
+    return data.toString();
+  }
+
+  @Override
+  public double evaluate() {
+    return Double.parseDouble(data.toString());
+  }
+
+  @Override
+  public String toString() {
     return data.toString();
   }
 }

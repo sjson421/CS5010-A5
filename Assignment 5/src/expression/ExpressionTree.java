@@ -37,7 +37,7 @@ public class ExpressionTree implements Expression {
 
   @Override
   public double evaluate() {
-    return 0;
+    return root.evaluate();
   }
 
   @Override
@@ -52,6 +52,6 @@ public class ExpressionTree implements Expression {
 
   @Override
   public String textTree() {
-    return null;
+    return root.toString();
   }
 }

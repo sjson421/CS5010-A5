@@ -3,6 +3,8 @@ package expression;
 import java.util.List;
 import java.util.function.Predicate;
 
+import intervals.Interval;
+
 public interface TreeNode<T> {
   /**
    * Adds a new child under the current node.
@@ -13,13 +15,6 @@ public interface TreeNode<T> {
   TreeNode<T> addChild(TreeNode<T> child);
 
   /**
-   * Returns the entire tree as a list, depth first.
-   *
-   * @return List of the tree, depth first.
-   */
-  List<T> toList();
-
-  /**
    * Returns the expression tree as an infix expression.
    *
    * @return The infix expression.
@@ -28,7 +23,29 @@ public interface TreeNode<T> {
 
   /**
    * Returns the expression tree as a format similar to that used in Scheme.
+   *
    * @return The scheme expression
    */
   String scheme();
+
+  /**
+   * Gets the evaluated double after specified algebraic expressions.
+   *
+   * @return The evaluated double after the operations provided
+   */
+  double evaluate();
+
+  /**
+   * Returns the data stored in the node.
+   *
+   * @return Data of the node.
+   */
+  T getData();
+
+  /**
+   * Returns the string form of the current node, added to the tree.
+   *
+   * @return The current node data, added to the tree.
+   */
+  String toString();
 }
