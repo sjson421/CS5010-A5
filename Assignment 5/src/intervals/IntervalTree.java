@@ -27,8 +27,12 @@ public class IntervalTree implements Intervals {
           nodeStack.push(optNode);
           root = optNode;
         } else {
-          TreeNode<String> numberNode = new LeafNode<>(node);
-          nodeStack.push(numberNode);
+          if (node.matches("\\d.\\d")) {
+            TreeNode<String> numberNode = new LeafNode<>(node);
+            nodeStack.push(numberNode);
+          } else {
+            throw new IllegalArgumentException("Invalid input");
+          }
         }
       }
     } catch (Exception e) {
@@ -38,11 +42,11 @@ public class IntervalTree implements Intervals {
 
   @Override
   public Interval evaluate() {
-    return null;
+    return root.evaluate();
   }
 
   @Override
   public String textTree() {
-    return null;
+    return root.toString();
   }
 }
