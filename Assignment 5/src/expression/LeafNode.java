@@ -33,4 +33,9 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
   public String infix() {
     return data.toString();
   }
+
+  @Override
+  public String scheme() {
+    return data.toString();
+  }
 }

@@ -20,9 +20,15 @@ public interface TreeNode<T> {
   List<T> toList();
 
   /**
-   * Returns the tress expression as an infix expression
+   * Returns the expression tree as an infix expression.
    *
    * @return The infix expression.
    */
   String infix();
+
+  /**
+   * Returns the expression tree as a format similar to that used in Scheme.
+   * @return The scheme expression
+   */
+  String scheme();
 }

@@ -37,35 +37,12 @@ public class GroupNode<T> extends AbstractTreeNode<T> {
   public String infix() {
     return "( " + children.get(0).infix() + " " + data.toString() + " "
             + children.get(1).infix() + " )";
-//      //If there is only one node
-//      if (tree.() == null && tree.() == null) {
-//        treeAsString.append(tree.toString() + " ");
-//      }
-//      //go to the children
-//    else {
-//
-//        treeAsString.append("( ");
-//
-//        // Get leftChild
-//        if (tree.() != null) {
-//          getIn(tree.(), treeAsString);
-//        }
-//
-//        // Get node
-//        treeAsString.append(tree.().toString() + " ");
-//
-//        // get rightChild
-//        if (tree.() != null) {
-//          getIn(tree.(), treeAsString);
-//        }
-//        //append a ")"
-//        treeAsString.append(") ");
-//      }
-//
-//      return treeAsString.toString();
-//    }
-//    return null;
   }
 
+  @Override
+  public String scheme() {
+    return "(" + data.toString() + " " + children.get(0).scheme() + " "
+            + children.get(1).scheme() + ")";
+  }
 
 }

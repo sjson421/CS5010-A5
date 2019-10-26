@@ -47,7 +47,7 @@ public class ExpressionTree implements Expression {
 
   @Override
   public String schemeExpression() {
-    return null;
+    return root.scheme();
   }
 
   @Override
