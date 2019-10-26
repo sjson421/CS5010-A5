@@ -1,15 +1,16 @@
-package expression;
+package intervals;
 
 import java.util.Scanner;
 import java.util.Stack;
 
-public class ExpressionTree implements Expression {
+public class IntervalTree implements Intervals {
+
   private TreeNode<String> root;
 
-  private ExpressionTree() {
+  private IntervalTree() {
   }
 
-  public ExpressionTree(String input) throws IllegalArgumentException {
+  public IntervalTree(String input) throws IllegalArgumentException {
     try {
       Scanner s = new Scanner(input.trim());
       Stack<TreeNode<String>> nodeStack = new Stack<>();
@@ -17,7 +18,7 @@ public class ExpressionTree implements Expression {
 
       while (s.hasNext()) {
         String node = s.next();
-        if (node.equals("+") || node.equals("-") || node.equals("*") || node.equals("/")) {
+        if (node.equals("U") || node.equals("I")) {
           TreeNode<String> optNode = new GroupNode<>(node);
           TreeNode<String> last = nodeStack.pop();
           TreeNode<String> secLast = nodeStack.pop();
@@ -36,17 +37,7 @@ public class ExpressionTree implements Expression {
   }
 
   @Override
-  public double evaluate() {
-    return 0;
-  }
-
-  @Override
-  public String infix() {
-    return null;
-  }
-
-  @Override
-  public String schemeExpression() {
+  public Interval evaluate() {
     return null;
   }
 
