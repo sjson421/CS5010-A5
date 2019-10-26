@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="206ea131-aacd-4f5a-9756-66888f55ef53" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expression/ExpressionTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expression/ExpressionTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment 5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/intervals/AbstractTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intervals/AbstractTreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/intervals/GroupNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intervals/GroupNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/intervals/IntervalTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intervals/IntervalTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/intervals/LeafNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intervals/LeafNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/intervals/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/intervals/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ExpressionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ExpressionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/IntervalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/IntervalTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,10 +34,18 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/intervals" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -49,6 +64,22 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="IntervalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment 5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IntervalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.IntervalTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -60,7 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572030644622</updated>
       <workItem from="1572030648228" duration="4596000" />
-      <workItem from="1572117562309" duration="1619000" />
+      <workItem from="1572117562309" duration="3030000" />
+      <workItem from="1572120614940" duration="2097000" />
     </task>
     <servers />
   </component>
@@ -72,7 +104,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

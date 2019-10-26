@@ -2,6 +2,7 @@ package intervals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class LeafNode<T> extends AbstractTreeNode<T> {
   private LeafNode() {
@@ -20,11 +21,19 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
     return newNode;
   }
 
-  //Taken from lecture 9 notes
   @Override
-  public List<T> toList() {
-    List<T> result = new ArrayList<T>();
-    result.add(this.data);
-    return result;
+  public String toString() {
+    return data.toString();
+  }
+
+  @Override
+  public Interval evaluate() {
+    Scanner s = new Scanner(data.toString());
+    s.useDelimiter(",");
+
+    int start = Integer.parseInt(s.next());
+    int end = Integer.parseInt(s.next());
+
+    return new Interval(start, end);
   }
 }

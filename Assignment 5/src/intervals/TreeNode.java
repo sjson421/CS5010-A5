@@ -11,8 +11,20 @@ public interface TreeNode<T> {
   TreeNode<T> addChild(TreeNode<T> child);
 
   /**
-   * Returns the entire tree as a list, depth first.
-   * @return List of the tree, depth first.
+   * Returns the data stored in the node.
+   * @return Data of the node.
    */
-  List<T> toList();
+  T getData();
+
+  /**
+   * Returns the string form of the current node, added to the tree.
+   * @return The current node data, added to the tree.
+   */
+  String toString();
+
+  /**
+   * Gets the evaluated interval after specified union and intersection operations.
+   * @return The evaluated interval after the operations provided
+   */
+  Interval evaluate();
 }
