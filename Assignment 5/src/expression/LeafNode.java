@@ -14,15 +14,11 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
 
   //Taken from lecture 9 notes
   @Override
-  public TreeNode<T> addChild(Predicate<T> identifier, TreeNode<T>
-          child) {
-    if (identifier.test(data)) {
-      //promote this to a group tree node
-      GroupNode<T> newNode = new GroupNode<T>(this.data);
-      newNode.addChild(identifier, child);
-      return newNode;
-    }
-    return this;
+  public TreeNode<T> addChild(TreeNode<T> child) {
+    //promote this to a group tree node
+    GroupNode<T> newNode = new GroupNode<T>(this.data);
+    newNode.addChild(child);
+    return newNode;
   }
 
   //Taken from lecture 9 notes

@@ -17,17 +17,8 @@ public class GroupNode<T> extends AbstractTreeNode<T> {
 
   //Taken from lecture 9 notes
   @Override
-  public TreeNode<T> addChild(Predicate<T> identifier, TreeNode<T> child) {
-    if (identifier.test(this.data)) {
-      this.children.add(child); //add it here and return
-      return this;
-    }
-    for (int i = 0; i < this.children.size(); i++) {
-      //add to child and mutate the child
-      this.children.set(
-              i,
-              this.children.get(i).addChild(identifier, child));
-    }
+  public TreeNode<T> addChild(TreeNode<T> child) {
+    this.children.add(child); //add it here and return
     return this;
   }
 
