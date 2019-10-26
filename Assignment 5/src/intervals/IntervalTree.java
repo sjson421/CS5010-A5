@@ -17,7 +17,7 @@ public class IntervalTree implements Intervals {
       s.useDelimiter(" ");
 
       while (s.hasNext()) {
-        String node = s.next();
+        String node = s.next().trim();
         if (node.equals("U") || node.equals("I")) {
           intervals.TreeNode<String> optNode = new GroupNode<>(node);
           intervals.TreeNode<String> last = nodeStack.pop();

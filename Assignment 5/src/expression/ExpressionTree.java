@@ -16,7 +16,7 @@ public class ExpressionTree implements Expression {
       s.useDelimiter(" ");
 
       while (s.hasNext()) {
-        String node = s.next();
+        String node = s.next().trim();
         if (node.equals("+") || node.equals("-") || node.equals("*") || node.equals("/")) {
           TreeNode<String> optNode = new GroupNode<>(node);
           TreeNode<String> last = nodeStack.pop();
