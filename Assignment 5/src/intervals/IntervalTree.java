@@ -1,13 +1,7 @@
-package expression;
+package intervals;
 
 import java.util.Scanner;
 import java.util.Stack;
-
-import intervals.GroupNode;
-import intervals.Interval;
-import intervals.Intervals;
-import intervals.LeafNode;
-import intervals.TreeNode;
 
 public class IntervalTree implements Intervals {
 
