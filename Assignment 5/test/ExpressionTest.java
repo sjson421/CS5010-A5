@@ -35,12 +35,12 @@ public class ExpressionTest {
     i = new ExpressionTree("2 4 +");
     i1 = new ExpressionTree("2 4 -");
     i2 = new ExpressionTree(" -2  4  * ");
-    i3 = new ExpressionTree("2 -4 /");
+    i3 = new ExpressionTree("2.2 -4 /");
     i4 = new ExpressionTree("0 0 +");
     i5 = new ExpressionTree("0 0 -");
     i6 = new ExpressionTree(" 0  0  * ");
     i7 = new ExpressionTree("0 0 /");
-    i8 = new ExpressionTree("2 4 + 3 -");
+    i8 = new ExpressionTree("2 4.2 + 3 -");
     i9 = new ExpressionTree("2 4 - 3 *");
     i10 = new ExpressionTree("2 4 * 3 /");
     i11 = new ExpressionTree("2 4 / 3 +");

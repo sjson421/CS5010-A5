@@ -41,7 +41,7 @@ public class ExpressionTree implements Expression {
             nodeStack.push(optNode);
             root = optNode;
           } else {
-            if (node.matches("-?\\d*")) {
+            if (node.matches("-?\\d*.?\\d*?")) {
               TreeNode<String> numberNode = new LeafNode<>(node);
               nodeStack.push(numberNode);
             } else {
