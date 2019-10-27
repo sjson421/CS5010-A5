@@ -17,6 +17,7 @@ public class ExpressionTree implements Expression {
 
   /**
    * Allows for creation of an expression tree with a postfix input of an algebraic expression.
+   *
    * @param input String input of an expression.
    * @throws IllegalArgumentException Thrown in case of invalid input.
    */
@@ -41,17 +42,15 @@ public class ExpressionTree implements Expression {
             nodeStack.push(optNode);
             root = optNode;
           } else {
-            if (node.matches("-?\\d*.?\\d*?")) {
+            if (node.matches("-?[\\d]+\\.?[\\d]*")) {
               TreeNode<String> numberNode = new LeafNode<>(node);
               nodeStack.push(numberNode);
+              root = numberNode;
             } else {
               throw new IllegalArgumentException("Invalid input");
             }
           }
         }
-      }
-      if (root == null) {
-        throw new IllegalArgumentException("Invalid input");
       }
     } catch (Exception e) {
       throw new IllegalArgumentException("Invalid input");

@@ -42,11 +42,6 @@ public class IntervalTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testInitializeFail3() {
-    Intervals f3 = new IntervalTree("4");
-  }
-
-  @Test(expected = IllegalArgumentException.class)
   public void testInitializeFail4() {
     Intervals f4 = new IntervalTree("2 3 I U");
   }
