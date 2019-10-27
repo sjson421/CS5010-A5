@@ -45,7 +45,8 @@ public interface TreeNode<T> {
   /**
    * Returns the string form of the current node, added to the tree.
    *
+   * @param depth Depth of the current node in the tree
    * @return The current node data, added to the tree.
    */
-  String toString();
+  String textTree(int depth);
 }

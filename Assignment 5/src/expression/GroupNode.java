@@ -53,10 +53,13 @@ public class GroupNode<T> extends AbstractTreeNode<T> {
   }
 
   @Override
-  public String toString() {
+  public String textTree(int depth) {
     if (children.size() == 2) {
-      return data.toString() + "\n/\n/\n/___" + children.get(0).toString()
-              + "\n/\n/___" + children.get(1).toString();
+      String spaces = getNestedSpaces(depth);
+      return spaces + data.toString() + "\n"
+              + spaces + "/\n" + spaces + "/\n" + spaces + "/___"
+              + children.get(1).textTree(depth + 1) + "\n"
+              + spaces + "/\n" + spaces + "/___" + children.get(0).textTree(depth + 1);
     } else {
       return "Invalid tree";
     }

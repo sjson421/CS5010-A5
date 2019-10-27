@@ -22,7 +22,7 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
   }
 
   @Override
-  public String toString() {
+  public String textTree(int depth) {
     return data.toString();
   }
 

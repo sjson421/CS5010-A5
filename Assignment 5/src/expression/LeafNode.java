@@ -37,7 +37,7 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
   }
 
   @Override
-  public String toString() {
+  public String textTree() {
     return data.toString();
   }
 }

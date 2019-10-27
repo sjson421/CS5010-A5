@@ -27,7 +27,7 @@ public class IntervalTree implements Intervals {
           nodeStack.push(optNode);
           root = optNode;
         } else {
-          if (node.matches("\\d*.\\d*")) {
+          if (node.matches("-?\\d*.-?\\d*")) {
             TreeNode<String> numberNode = new LeafNode<>(node);
             nodeStack.push(numberNode);
           } else {
@@ -47,6 +47,6 @@ public class IntervalTree implements Intervals {
 
   @Override
   public String textTree() {
-    return root.toString();
+    return root.textTree(0);
   }
 }
