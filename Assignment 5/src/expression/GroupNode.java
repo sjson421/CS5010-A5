@@ -13,28 +13,28 @@ public class GroupNode<T> extends UpperGroupNode<T> {
 
   @Override
   public String infix() {
-    return "( " + children.get(0).infix() + " " + data.toString() + " "
-            + children.get(1).infix() + " )";
+    return "( " + children.get(1).infix() + " " + data.toString() + " "
+            + children.get(0).infix() + " )";
   }
 
   @Override
   public String scheme() {
-    return "(" + data.toString() + " " + children.get(0).scheme() + " "
-            + children.get(1).scheme() + ")";
+    return "(" + data.toString() + " " + children.get(1).scheme() + " "
+            + children.get(0).scheme() + ")";
   }
 
   @Override
   public double evaluateDouble() {
     if (children.size() == 2) {
       if (data.equals("+")) {
-        return children.get(0).evaluateDouble() + children.get(1).evaluateDouble();
+        return children.get(1).evaluateDouble() + children.get(0).evaluateDouble();
       } else if (data.equals("-")) {
-        return children.get(0).evaluateDouble() - children.get(1).evaluateDouble();
+        return children.get(1).evaluateDouble() - children.get(0).evaluateDouble();
       } else if (data.equals("*")) {
-        return children.get(0).evaluateDouble() * children.get(1).evaluateDouble();
+        return children.get(1).evaluateDouble() * children.get(0).evaluateDouble();
       } else {
         // Due to the check from the tree, this must be division "/"
-        return children.get(0).evaluateDouble() / children.get(1).evaluateDouble();
+        return children.get(1).evaluateDouble() / children.get(0).evaluateDouble();
       }
     } else {
       return 0;
