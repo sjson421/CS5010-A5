@@ -5,6 +5,9 @@ import java.util.Stack;
 
 import tree.TreeNode;
 
+/**
+ * The tree for holding onto algebraic expressions, with the input as postfix.
+ */
 public class ExpressionTree implements Expression {
   private TreeNode<String> root;
 
@@ -12,6 +15,11 @@ public class ExpressionTree implements Expression {
     // No default constructor
   }
 
+  /**
+   * Allows for creation of an expression tree with a postfix input of an algebraic expression.
+   * @param input String input of an expression.
+   * @throws IllegalArgumentException Thrown in case of invalid input.
+   */
   public ExpressionTree(String input) throws IllegalArgumentException {
     try {
       if (input.equals("")) {

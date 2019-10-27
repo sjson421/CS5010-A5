@@ -2,6 +2,10 @@ package expression;
 
 import tree.UpperGroupNode;
 
+/**
+ * Expression node with children, with its own specific functions.
+ * @param <T> Type of node data
+ */
 public class GroupNode<T> extends UpperGroupNode<T> {
   public GroupNode(T data) {
     super(data);

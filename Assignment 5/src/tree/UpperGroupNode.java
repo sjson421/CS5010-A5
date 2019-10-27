@@ -3,8 +3,12 @@ package tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import intervals.Interval;
-
+/**
+ * Group node holding onto the common operations of both types of group nodes in expression and
+ * interval.
+ *
+ * @param <T> Type of tree node.
+ */
 public class UpperGroupNode<T> extends AbstractTreeNode<T> {
   protected List<TreeNode<T>> children;
 

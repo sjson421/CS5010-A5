@@ -5,6 +5,10 @@ import java.util.Stack;
 
 import tree.TreeNode;
 
+/**
+ * The tree for holding onto interval operations, with the input as intervals first, then
+ * operations.
+ */
 public class IntervalTree implements Intervals {
 
   private TreeNode<String> root;
@@ -13,6 +17,12 @@ public class IntervalTree implements Intervals {
     // No default constructor
   }
 
+  /**
+   * Allows for creation of an interval tree.
+   *
+   * @param input String input of an interval expression, written in postfix.
+   * @throws IllegalArgumentException Thrown in case of invalid input.
+   */
   public IntervalTree(String input) throws IllegalArgumentException {
     try {
       if (input.equals("")) {

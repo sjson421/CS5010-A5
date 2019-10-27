@@ -2,6 +2,11 @@ package tree;
 
 import intervals.Interval;
 
+/**
+ * Abstract tree node class for holding onto data and holding onto temporary or commonly used
+ * functions.
+ * @param <T> Type of tree node.
+ */
 public abstract class AbstractTreeNode<T> implements TreeNode<T> {
   protected T data;
 

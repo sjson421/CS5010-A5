@@ -2,6 +2,10 @@ package tree;
 
 import intervals.Interval;
 
+/**
+ * Node of a tree, of type T. Can be either group node or leaf node.
+ * @param <T> Type of tree node.
+ */
 public interface TreeNode<T> {
   /**
    * Adds a new child under the current node.

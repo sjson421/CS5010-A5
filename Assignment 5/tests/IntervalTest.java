@@ -6,6 +6,9 @@ import intervals.IntervalTree;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Test for the interval tree.
+ */
 public class IntervalTest {
   private Intervals h;
   private Intervals i;

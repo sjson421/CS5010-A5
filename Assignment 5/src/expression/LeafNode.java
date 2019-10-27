@@ -2,6 +2,10 @@ package expression;
 
 import tree.UpperLeafNode;
 
+/**
+ * Expression node without children, with its own specific functions.
+ * @param <T> Type of node data
+ */
 public class LeafNode<T> extends UpperLeafNode<T> {
   public LeafNode(T data) {
     super(data);

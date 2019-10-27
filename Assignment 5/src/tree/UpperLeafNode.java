@@ -1,5 +1,11 @@
 package tree;
 
+/**
+ * Leaf node holding onto the common operations of both types of leaf nodes in expression and
+ * interval.
+ *
+ * @param <T> Type of tree node.
+ */
 public class UpperLeafNode<T> extends AbstractTreeNode<T> {
   public UpperLeafNode(T data) {
     this.data = data;

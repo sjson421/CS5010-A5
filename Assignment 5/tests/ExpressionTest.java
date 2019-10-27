@@ -82,6 +82,4 @@ public class ExpressionTest {
   public void testInitializeFail5() {
     Expression f4 = new ExpressionTree("A");
   }
-
-
 }

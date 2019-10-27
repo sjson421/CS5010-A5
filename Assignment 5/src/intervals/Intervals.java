@@ -23,8 +23,8 @@ public interface Intervals {
    *   |
    *   |___3,4
    * </pre>
-   * <p>
-   * The expression "(1,2) (3,4) (4,6) U (3,5) I U will be formatted as a string:
+   *
+   * <p>The expression "(1,2) (3,4) (4,6) U (3,5) I U will be formatted as a string:
    * <pre>
    *   U
    *   |

@@ -2,6 +2,10 @@ package intervals;
 
 import tree.UpperGroupNode;
 
+/**
+ * Interval node with children, with its own specific functions.
+ * @param <T> Type of node data
+ */
 public class GroupNode<T> extends UpperGroupNode<T> {
   public GroupNode(T data) {
     super(data);
