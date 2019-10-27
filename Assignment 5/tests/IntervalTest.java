@@ -45,7 +45,12 @@ public class IntervalTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testInitializeFail4() {
-    Intervals f4 = new IntervalTree("2 3 - *");
+    Intervals f4 = new IntervalTree("2 3 I U");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testInitializeFail5() {
+    Intervals f4 = new IntervalTree("A");
   }
 
   @Test
@@ -167,14 +172,4 @@ public class IntervalTest {
             "/\n" +
             "/___0,1", i7.textTree());
   }
-  /*
-    h = new IntervalTree("1,4 2,5 I");
-    i = new IntervalTree("1,4 2,5 U");
-    i2 = new IntervalTree("-4,4 2,5 U  -1,7 I ");
-    i3 = new IntervalTree("3,7 2,8 4,10 I U");
-    i4 = new IntervalTree("0,0 0,0 I");
-    i5 = new IntervalTree("0,0 0,0 U");
-    i6 = new IntervalTree("0,1 0,1 I");
-    i7 = new IntervalTree("0,1 0,1 U");
-   */
 }
