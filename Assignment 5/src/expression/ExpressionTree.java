@@ -3,14 +3,20 @@ package expression;
 import java.util.Scanner;
 import java.util.Stack;
 
+import tree.TreeNode;
+
 public class ExpressionTree implements Expression {
   private TreeNode<String> root;
 
   private ExpressionTree() {
+    // No default constructor
   }
 
   public ExpressionTree(String input) throws IllegalArgumentException {
     try {
+      if (input.equals("")) {
+        throw new IllegalArgumentException("Invalid input");
+      }
       Scanner s = new Scanner(input.trim());
       Stack<TreeNode<String>> nodeStack = new Stack<>();
       s.useDelimiter(" ");
@@ -37,7 +43,7 @@ public class ExpressionTree implements Expression {
 
   @Override
   public double evaluate() {
-    return root.evaluate();
+    return root.evaluateDouble();
   }
 
   @Override

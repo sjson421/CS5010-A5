@@ -1,24 +1,10 @@
 package expression;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Predicate;
+import tree.UpperLeafNode;
 
-public class LeafNode<T> extends AbstractTreeNode<T> {
-  private LeafNode() {
-  }
-
+public class LeafNode<T> extends UpperLeafNode<T> {
   public LeafNode(T data) {
-    this.data = data;
-  }
-
-  //Taken from lecture 9 notes
-  @Override
-  public TreeNode<T> addChild(TreeNode<T> child) {
-    //promote this to a group tree node
-    GroupNode<T> newNode = new GroupNode<T>(this.data);
-    newNode.addChild(child);
-    return newNode;
+    super(data);
   }
 
   @Override
@@ -32,12 +18,7 @@ public class LeafNode<T> extends AbstractTreeNode<T> {
   }
 
   @Override
-  public double evaluate() {
+  public double evaluateDouble() {
     return Double.parseDouble(data.toString());
-  }
-
-  @Override
-  public String textTree() {
-    return data.toString();
   }
 }

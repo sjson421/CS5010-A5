@@ -1,33 +1,16 @@
 package intervals;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-public class LeafNode<T> extends AbstractTreeNode<T> {
-  private LeafNode() {
-  }
+import tree.UpperLeafNode;
 
+public class LeafNode<T> extends UpperLeafNode<T> {
   public LeafNode(T data) {
-    this.data = data;
-  }
-
-  //Taken from lecture 9 notes
-  @Override
-  public TreeNode<T> addChild(TreeNode<T> child) {
-    //promote this to a group tree node
-    GroupNode<T> newNode = new GroupNode<T>(this.data);
-    newNode.addChild(child);
-    return newNode;
+    super(data);
   }
 
   @Override
-  public String textTree(int depth) {
-    return data.toString();
-  }
-
-  @Override
-  public Interval evaluate() {
+  public Interval evaluateInterval() {
     Scanner s = new Scanner(data.toString());
     s.useDelimiter(",");
 

@@ -1,4 +1,6 @@
-package intervals;
+package tree;
+
+import intervals.Interval;
 
 public interface TreeNode<T> {
   /**
@@ -29,5 +31,26 @@ public interface TreeNode<T> {
    *
    * @return The evaluated interval after the operations provided
    */
-  Interval evaluate();
+  Interval evaluateInterval();
+
+  /**
+   * Gets the evaluated double after specified algebraic expressions.
+   *
+   * @return The evaluated double after the operations provided
+   */
+  double evaluateDouble();
+
+  /**
+   * Returns the expression tree as an infix expression.
+   *
+   * @return The infix expression.
+   */
+  String infix();
+
+  /**
+   * Returns the expression tree as a format similar to that used in Scheme.
+   *
+   * @return The scheme expression
+   */
+  String scheme();
 }

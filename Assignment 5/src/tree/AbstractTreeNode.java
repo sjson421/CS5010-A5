@@ -1,4 +1,6 @@
-package intervals;
+package tree;
+
+import intervals.Interval;
 
 public abstract class AbstractTreeNode<T> implements TreeNode<T> {
   protected T data;
@@ -19,5 +21,25 @@ public abstract class AbstractTreeNode<T> implements TreeNode<T> {
       text.append("    ");
     }
     return text.toString();
+  }
+
+  @Override
+  public Interval evaluateInterval() {
+    return null;
+  }
+
+  @Override
+  public double evaluateDouble() {
+    return 0;
+  }
+
+  @Override
+  public String infix() {
+    return null;
+  }
+
+  @Override
+  public String scheme() {
+    return null;
   }
 }
