@@ -34,8 +34,8 @@ public class ExpressionTest {
   public void setUp() {
     i = new ExpressionTree("2 4 +");
     i1 = new ExpressionTree("2 4 -");
-    i2 = new ExpressionTree(" 2  4  * ");
-    i3 = new ExpressionTree("2 4 /");
+    i2 = new ExpressionTree(" -2  4  * ");
+    i3 = new ExpressionTree("2 -4 /");
     i4 = new ExpressionTree("0 0 +");
     i5 = new ExpressionTree("0 0 -");
     i6 = new ExpressionTree(" 0  0  * ");
@@ -44,10 +44,10 @@ public class ExpressionTest {
     i9 = new ExpressionTree("2 4 - 3 *");
     i10 = new ExpressionTree("2 4 * 3 /");
     i11 = new ExpressionTree("2 4 / 3 +");
-    i12 = new ExpressionTree("2 4 3 + -");
-    i13 = new ExpressionTree("2 4 3 - *");
-    i14 = new ExpressionTree("2 4 3 * /");
-    i15 = new ExpressionTree("2 4 3 / +");
+    i12 = new ExpressionTree("2 -4 3 + -");
+    i13 = new ExpressionTree("-2 4 3 - *");
+    i14 = new ExpressionTree("2 -4 3 * /");
+    i15 = new ExpressionTree("-2 4 3 / +");
     i16 = new ExpressionTree("0 0 + 0 -");
     i17 = new ExpressionTree("0 0 - 0 *");
     i18 = new ExpressionTree("0 0 * 0 /");
@@ -82,4 +82,6 @@ public class ExpressionTest {
   public void testInitializeFail5() {
     Expression f4 = new ExpressionTree("A");
   }
+
+
 }
