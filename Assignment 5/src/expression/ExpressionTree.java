@@ -22,18 +22,20 @@ public class ExpressionTree implements Expression {
       s.useDelimiter(" ");
 
       while (s.hasNext()) {
-        String node = s.next().trim();
-        if (node.equals("+") || node.equals("-") || node.equals("*") || node.equals("/")) {
-          TreeNode<String> optNode = new GroupNode<>(node);
-          TreeNode<String> last = nodeStack.pop();
-          TreeNode<String> secLast = nodeStack.pop();
-          optNode.addChild(last);
-          optNode.addChild(secLast);
-          nodeStack.push(optNode);
-          root = optNode;
-        } else {
-          TreeNode<String> numberNode = new LeafNode<>(node);
-          nodeStack.push(numberNode);
+        String node = s.next();
+        if (!node.equals("")) {
+          if (node.equals("+") || node.equals("-") || node.equals("*") || node.equals("/")) {
+            TreeNode<String> optNode = new GroupNode<>(node);
+            TreeNode<String> last = nodeStack.pop();
+            TreeNode<String> secLast = nodeStack.pop();
+            optNode.addChild(last);
+            optNode.addChild(secLast);
+            nodeStack.push(optNode);
+            root = optNode;
+          } else {
+            TreeNode<String> numberNode = new LeafNode<>(node);
+            nodeStack.push(numberNode);
+          }
         }
       }
     } catch (Exception e) {

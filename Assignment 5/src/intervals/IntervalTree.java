@@ -23,23 +23,28 @@ public class IntervalTree implements Intervals {
       s.useDelimiter(" ");
 
       while (s.hasNext()) {
-        String node = s.next().trim();
-        if (node.equals("U") || node.equals("I")) {
-          TreeNode<String> optNode = new GroupNode<>(node);
-          TreeNode<String> last = nodeStack.pop();
-          TreeNode<String> secLast = nodeStack.pop();
-          optNode.addChild(last);
-          optNode.addChild(secLast);
-          nodeStack.push(optNode);
-          root = optNode;
-        } else {
-          if (node.matches("-?\\d*.-?\\d*")) {
-            TreeNode<String> numberNode = new LeafNode<>(node);
-            nodeStack.push(numberNode);
+        String node = s.next();
+        if (!node.equals("")) {
+          if (node.equals("U") || node.equals("I")) {
+            TreeNode<String> optNode = new GroupNode<>(node);
+            TreeNode<String> last = nodeStack.pop();
+            TreeNode<String> secLast = nodeStack.pop();
+            optNode.addChild(last);
+            optNode.addChild(secLast);
+            nodeStack.push(optNode);
+            root = optNode;
           } else {
-            throw new IllegalArgumentException("Invalid input");
+            if (node.matches("-?\\d*.-?\\d*")) {
+              TreeNode<String> numberNode = new LeafNode<>(node);
+              nodeStack.push(numberNode);
+            } else {
+              throw new IllegalArgumentException("Invalid input");
+            }
           }
         }
+      }
+      if (root == null) {
+        throw new IllegalArgumentException("Invalid input");
       }
     } catch (Exception e) {
       throw new IllegalArgumentException("Invalid input");
@@ -53,6 +58,6 @@ public class IntervalTree implements Intervals {
 
   @Override
   public String textTree() {
-    return root.textTree(0);
+    return root.textTree(0, false);
   }
 }

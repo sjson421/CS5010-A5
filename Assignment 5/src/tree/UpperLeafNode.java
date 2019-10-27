@@ -6,7 +6,7 @@ public class UpperLeafNode<T> extends AbstractTreeNode<T> {
   }
 
   @Override
-  public String textTree(int depth) {
+  public String textTree(int depth, boolean firstChild) {
     return data.toString();
   }
 

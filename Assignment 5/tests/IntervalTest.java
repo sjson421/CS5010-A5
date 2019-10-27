@@ -20,7 +20,7 @@ public class IntervalTest {
   public void setUp() {
     h = new IntervalTree("1,4 2,5 I");
     i = new IntervalTree("1,4 2,5 U");
-    //i2 = new IntervalTree("-4,4 2,5 U  -1,7 I ");
+    i2 = new IntervalTree("-4,4 2,5 U  -1,7 I ");
     i3 = new IntervalTree("3,7 2,8 4,10 I U");
     i4 = new IntervalTree("0,0 0,0 I");
     i5 = new IntervalTree("0,0 0,0 U");
@@ -95,35 +95,77 @@ public class IntervalTest {
 
   @Test
   public void testText2() {
-    assertEquals("", i.textTree());
+    assertEquals("U\n/\n/\n/___1,4\n/\n/___2,5", i.textTree());
   }
 
   @Test
   public void testText3() {
-    assertEquals("", i2.textTree());
+    assertEquals("I\n" +
+            "/\n" +
+            "/\n" +
+            "/___U\n" +
+            "/   /\n" +
+            "/   /\n" +
+            "/   /___-4,4\n" +
+            "/   /\n" +
+            "/   /___2,5\n" +
+            "/\n" +
+            "/___-1,7", i2.textTree());
   }
 
   @Test
   public void testText4() {
-    assertEquals("", i3.textTree());
+    assertEquals("U\n" +
+            "/\n" +
+            "/\n" +
+            "/___3,7\n" +
+            "/\n" +
+            "/___I\n" +
+            "    /\n" +
+            "    /\n" +
+            "    /___2,8\n" +
+            "    /\n" +
+            "    /___4,10", i3.textTree());
   }
 
   @Test
   public void testText5() {
-    assertEquals("", i4.textTree());
+    assertEquals("I\n" +
+            "/\n" +
+            "/\n" +
+            "/___0,0\n" +
+            "/\n" +
+            "/___0,0", i4.textTree());
   }
+
   @Test
   public void testText6() {
-    assertEquals("", i5.textTree());
+    assertEquals("U\n" +
+            "/\n" +
+            "/\n" +
+            "/___0,0\n" +
+            "/\n" +
+            "/___0,0", i5.textTree());
   }
 
   @Test
   public void testText7() {
-    assertEquals("", i6.textTree());
+    assertEquals("I\n" +
+            "/\n" +
+            "/\n" +
+            "/___0,1\n" +
+            "/\n" +
+            "/___0,1", i6.textTree());
   }
+
   @Test
   public void testText8() {
-    assertEquals("", i7.textTree());
+    assertEquals("U\n" +
+            "/\n" +
+            "/\n" +
+            "/___0,1\n" +
+            "/\n" +
+            "/___0,1", i7.textTree());
   }
   /*
     h = new IntervalTree("1,4 2,5 I");

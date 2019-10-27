@@ -22,9 +22,10 @@ public interface TreeNode<T> {
    * Returns the string form of the current node, added to the tree.
    *
    * @param depth Depth of the current node in the tree
+   * @param firstChild True if the current node is the first child of its parent. False if not.
    * @return The current node data, added to the tree.
    */
-  String textTree(int depth);
+  String textTree(int depth, boolean firstChild);
 
   /**
    * Gets the evaluated interval after specified union and intersection operations.
