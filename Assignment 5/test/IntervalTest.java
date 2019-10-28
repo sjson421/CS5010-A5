@@ -19,6 +19,7 @@ public class IntervalTest {
   private Intervals i6;
   private Intervals i7;
   private Intervals i8;
+  private Intervals i9;
 
   @Before
   public void setUp() {
@@ -31,6 +32,7 @@ public class IntervalTest {
     i6 = new IntervalTree("0,1 0,1 I");
     i7 = new IntervalTree("0,1 0,1 U");
     i8 = new IntervalTree("1,4 2,5 I 1,2 U 5,7 U 1,2 1,2 1,2 U 1,2 U I U");
+    i9 = new IntervalTree("1,2");
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -45,12 +47,17 @@ public class IntervalTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testInitializeFail4() {
-    Intervals f4 = new IntervalTree("2 3 I U");
+    Intervals f4 = new IntervalTree("2,3 3,4 I U");
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testInitializeFail5() {
     Intervals f4 = new IntervalTree("A");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testInitializeFail6() {
+    Intervals f = new IntervalTree("1,2 2,3 -3,5 U 4,7 I");
   }
 
   @Test
@@ -91,6 +98,16 @@ public class IntervalTest {
   @Test
   public void testEvaluate8() {
     assertEquals("0,1", i7.evaluate().toString());
+  }
+
+  @Test
+  public void testEvaluateSingle() {
+    assertEquals("1,2", i9.evaluate().toString());
+  }
+
+  @Test
+  public void testTextTreeSingle() {
+    assertEquals("1,2", i9.textTree());
   }
 
   @Test
