@@ -77,6 +77,6 @@ public class ExpressionTree implements Expression {
 
   @Override
   public String textTree() {
-    return root.toString();
+    return root.textTree(0, false, Integer.MAX_VALUE);
   }
 }

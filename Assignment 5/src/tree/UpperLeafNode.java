@@ -12,7 +12,7 @@ public class UpperLeafNode<T> extends AbstractTreeNode<T> {
   }
 
   @Override
-  public String textTree(int depth, boolean firstChild) {
+  public String textTree(int depth, boolean firstChild, int branchStart) {
     return data.toString();
   }
 

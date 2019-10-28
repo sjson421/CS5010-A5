@@ -25,21 +25,21 @@ public class UpperGroupNode<T> extends AbstractTreeNode<T> {
   }
 
   @Override
-  public String textTree(int depth, boolean firstChild) {
-    String spaces = getNestedSpaces(depth);
+  public String textTree(int depth, boolean firstChild, int branchStart) {
+    String spaces;
     if (firstChild) {
-      spaces = spaces.substring(0, spaces.length() - 1);
-      return data.toString() + "\n/"
-              + spaces + "/\n/" + spaces + "/\n/" + spaces + "/___"
-              + children.get(1).textTree(depth + 1, true) + "\n/"
-              + spaces + "/\n/" + spaces + "/___"
-              + children.get(0).textTree(depth + 1, false);
+      if (branchStart == Integer.MAX_VALUE) {
+        branchStart = depth - 1;
+      }
+      spaces = getNestedSpaces(depth, branchStart);
     } else {
-      return data.toString() + "\n"
-              + spaces + "/\n" + spaces + "/\n" + spaces + "/___"
-              + children.get(1).textTree(depth + 1, true) + "\n"
-              + spaces + "/\n" + spaces + "/___"
-              + children.get(0).textTree(depth + 1, false);
+      spaces = getNestedSpaces(depth, depth);
     }
+    return data.toString() + "\n"
+            + spaces + "|\n"
+            + spaces + "|\n"
+            + spaces + "|___" + children.get(1).textTree(depth + 1, true, branchStart) + "\n"
+            + spaces + "|\n"
+            + spaces + "|___" + children.get(0).textTree(depth + 1, false, branchStart);
   }
 }

@@ -18,23 +18,19 @@ public class IntervalTest {
   private Intervals i5;
   private Intervals i6;
   private Intervals i7;
-  Intervals i8 = new IntervalTree("1,4 2,5 I 1,2 U 5,7 U 2,5 I");
+  private Intervals i8;
 
   @Before
   public void setUp() {
     h = new IntervalTree("1,4 2,5 I");
     i = new IntervalTree("1,4 2,5 U");
-    i2 = new IntervalTree("-4,4 2,5 U  -1,7 I ");
+    i2 = new IntervalTree("-4,4 2,5 U  -1,7 I");
     i3 = new IntervalTree("3,7 2,8 4,10 I U");
     i4 = new IntervalTree("0,0 0,0 I");
     i5 = new IntervalTree("0,0 0,0 U");
     i6 = new IntervalTree("0,1 0,1 I");
     i7 = new IntervalTree("0,1 0,1 U");
-  }
-
-  @Test
-  public void test() {
-    assertEquals("I\n/\n/\n/___1,4\n/\n/___2,5", i8.textTree());
+    i8 = new IntervalTree("1,4 2,5 I 1,2 U 5,7 U 1,2 1,2 1,2 U 1,2 U I U");
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -99,81 +95,131 @@ public class IntervalTest {
 
   @Test
   public void testText1() {
-    assertEquals("I\n/\n/\n/___1,4\n/\n/___2,5", h.textTree());
+    assertEquals("I\n" +
+            "|\n" +
+            "|\n" +
+            "|___1,4\n" +
+            "|\n" +
+            "|___2,5", h.textTree());
   }
 
   @Test
   public void testText2() {
-    assertEquals("U\n/\n/\n/___1,4\n/\n/___2,5", i.textTree());
+    assertEquals("U\n" +
+            "|\n" +
+            "|\n" +
+            "|___1,4\n" +
+            "|\n" +
+            "|___2,5", i.textTree());
   }
 
   @Test
   public void testText3() {
     assertEquals("I\n" +
-            "/\n" +
-            "/\n" +
-            "/___U\n" +
-            "/   /\n" +
-            "/   /\n" +
-            "/   /___-4,4\n" +
-            "/   /\n" +
-            "/   /___2,5\n" +
-            "/\n" +
-            "/___-1,7", i2.textTree());
+            "|\n" +
+            "|\n" +
+            "|___U\n" +
+            "|   |\n" +
+            "|   |\n" +
+            "|   |___-4,4\n" +
+            "|   |\n" +
+            "|   |___2,5\n" +
+            "|\n" +
+            "|___-1,7", i2.textTree());
   }
 
   @Test
   public void testText4() {
     assertEquals("U\n" +
-            "/\n" +
-            "/\n" +
-            "/___3,7\n" +
-            "/\n" +
-            "/___I\n" +
-            "    /\n" +
-            "    /\n" +
-            "    /___2,8\n" +
-            "    /\n" +
-            "    /___4,10", i3.textTree());
+            "|\n" +
+            "|\n" +
+            "|___3,7\n" +
+            "|\n" +
+            "|___I\n" +
+            "    |\n" +
+            "    |\n" +
+            "    |___2,8\n" +
+            "    |\n" +
+            "    |___4,10", i3.textTree());
   }
 
   @Test
   public void testText5() {
     assertEquals("I\n" +
-            "/\n" +
-            "/\n" +
-            "/___0,0\n" +
-            "/\n" +
-            "/___0,0", i4.textTree());
+            "|\n" +
+            "|\n" +
+            "|___0,0\n" +
+            "|\n" +
+            "|___0,0", i4.textTree());
   }
 
   @Test
   public void testText6() {
     assertEquals("U\n" +
-            "/\n" +
-            "/\n" +
-            "/___0,0\n" +
-            "/\n" +
-            "/___0,0", i5.textTree());
+            "|\n" +
+            "|\n" +
+            "|___0,0\n" +
+            "|\n" +
+            "|___0,0", i5.textTree());
   }
 
   @Test
   public void testText7() {
     assertEquals("I\n" +
-            "/\n" +
-            "/\n" +
-            "/___0,1\n" +
-            "/\n" +
-            "/___0,1", i6.textTree());
+            "|\n" +
+            "|\n" +
+            "|___0,1\n" +
+            "|\n" +
+            "|___0,1", i6.textTree());
   }
 
   @Test
   public void testText8() {
     assertEquals("U\n" +
-            "/\n" +
-            "/\n" +
-            "/___0,1\n" +
-            "/\n" +
-            "/___0,1", i7.textTree());
+            "|\n" +
+            "|\n" +
+            "|___0,1\n" +
+            "|\n" +
+            "|___0,1", i7.textTree());
+  }
+
+  @Test
+  public void testLengthyText() {
+    assertEquals("U\n" +
+            "|\n" +
+            "|\n" +
+            "|___U\n" +
+            "|   |\n" +
+            "|   |\n" +
+            "|   |___U\n" +
+            "|   |   |\n" +
+            "|   |   |\n" +
+            "|   |   |___I\n" +
+            "|   |   |   |\n" +
+            "|   |   |   |\n" +
+            "|   |   |   |___1,4\n" +
+            "|   |   |   |\n" +
+            "|   |   |   |___2,5\n" +
+            "|   |   |\n" +
+            "|   |   |___1,2\n" +
+            "|   |\n" +
+            "|   |___5,7\n" +
+            "|\n" +
+            "|___I\n" +
+            "    |\n" +
+            "    |\n" +
+            "    |___1,2\n" +
+            "    |\n" +
+            "    |___U\n" +
+            "        |\n" +
+            "        |\n" +
+            "        |___U\n" +
+            "        |   |\n" +
+            "        |   |\n" +
+            "        |   |___1,2\n" +
+            "        |   |\n" +
+            "        |   |___1,2\n" +
+            "        |\n" +
+            "        |___1,2", i8.textTree());
   }
 }

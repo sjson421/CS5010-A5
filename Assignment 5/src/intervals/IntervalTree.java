@@ -69,6 +69,6 @@ public class IntervalTree implements Intervals {
 
   @Override
   public String textTree() {
-    return root.textTree(0, false);
+    return root.textTree(0, false, Integer.MAX_VALUE);
   }
 }

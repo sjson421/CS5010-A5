@@ -27,9 +27,11 @@ public interface TreeNode<T> {
    *
    * @param depth Depth of the current node in the tree
    * @param firstChild True if the current node is the first child of its parent. False if not.
+   * @param branchStart In the case that this node is the first child, the depth where the
+   *                    first branch to be printed as a slash begins.
    * @return The current node data, added to the tree.
    */
-  String textTree(int depth, boolean firstChild);
+  String textTree(int depth, boolean firstChild, int branchStart);
 
   /**
    * Gets the evaluated interval after specified union and intersection operations.

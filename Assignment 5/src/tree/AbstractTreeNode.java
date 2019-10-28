@@ -20,10 +20,13 @@ public abstract class AbstractTreeNode<T> implements TreeNode<T> {
    * @param depth Current depth of the tree.
    * @return String of spaces for text tree depth.
    */
-  protected String getNestedSpaces(int depth) {
+  protected String getNestedSpaces(int depth, int branchStart) {
     StringBuilder text = new StringBuilder();
-    for (int i = 0; i < depth; i++) {
+    for (int i = 0; i < branchStart; i++) {
       text.append("    ");
+    }
+    for (int i = branchStart; i < depth; i++) {
+      text.append("|   ");
     }
     return text.toString();
   }
