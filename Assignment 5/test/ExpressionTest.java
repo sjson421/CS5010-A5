@@ -83,6 +83,6 @@ public class ExpressionTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testInitializeFail6() {
-    Expression f = new ExpressionTree("a b d + c +");
+    Expression f = new ExpressionTree("1 2 -3 + 4 +");
   }
 }

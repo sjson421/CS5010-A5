@@ -18,6 +18,7 @@ public class IntervalTest {
   private Intervals i5;
   private Intervals i6;
   private Intervals i7;
+  Intervals i8 = new IntervalTree("1,4 2,5 I 1,2 U 5,7 U 2,5 I");
 
   @Before
   public void setUp() {
@@ -29,6 +30,11 @@ public class IntervalTest {
     i5 = new IntervalTree("0,0 0,0 U");
     i6 = new IntervalTree("0,1 0,1 I");
     i7 = new IntervalTree("0,1 0,1 U");
+  }
+
+  @Test
+  public void test() {
+    assertEquals("I\n/\n/\n/___1,4\n/\n/___2,5", i8.textTree());
   }
 
   @Test(expected = IllegalArgumentException.class)

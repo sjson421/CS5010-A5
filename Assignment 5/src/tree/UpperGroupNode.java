@@ -32,12 +32,14 @@ public class UpperGroupNode<T> extends AbstractTreeNode<T> {
       return data.toString() + "\n/"
               + spaces + "/\n/" + spaces + "/\n/" + spaces + "/___"
               + children.get(1).textTree(depth + 1, true) + "\n/"
-              + spaces + "/\n/" + spaces + "/___" + children.get(0).textTree(depth + 1, false);
+              + spaces + "/\n/" + spaces + "/___"
+              + children.get(0).textTree(depth + 1, false);
     } else {
       return data.toString() + "\n"
               + spaces + "/\n" + spaces + "/\n" + spaces + "/___"
               + children.get(1).textTree(depth + 1, true) + "\n"
-              + spaces + "/\n" + spaces + "/___" + children.get(0).textTree(depth + 1, false);
+              + spaces + "/\n" + spaces + "/___"
+              + children.get(0).textTree(depth + 1, false);
     }
   }
 }

@@ -52,6 +52,9 @@ public class ExpressionTree implements Expression {
           }
         }
       }
+      if (nodeStack.size() != 1) {
+        throw new IllegalArgumentException("Invalid input");
+      }
     } catch (Exception e) {
       throw new IllegalArgumentException("Invalid input");
     }
